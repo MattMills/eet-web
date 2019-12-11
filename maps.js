@@ -1,4 +1,4 @@
-var hapmap = null;
+var southwestrussia_baseoverlay = null;
 
 $(document).ready(function(){
 // initialize the map on the "map" div with a given center and zoom
