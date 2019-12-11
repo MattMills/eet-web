@@ -1,3 +1,6 @@
+var hapmap = null;
+
+$(document).ready(function(){
 // initialize the map on the "map" div with a given center and zoom
 var map = L.map('map', {
     center: [55.7558, 37.6173],
@@ -35,5 +38,6 @@ var overlayMaps = {
 L.control.layers(baseMaps, overlayMaps,{collapsed:false}).addTo(map);
 
 //Really hacky opacity slider
-$("span:contains('South-West Russia 1893')").html('South-West Russia 1893<input id="slide" type="range" min="0" max="1" step="0.1" value="0.5" onchange="hapmap.setOpacity(this.value)">');
+$("span:contains('South-West Russia 1893')").html('South-West Russia 1893<input id="slide" type="range" min="0" max="1" step="0.1" value="1.0" onchange="hapmap.setOpacity(this.value)">');
 
+});
