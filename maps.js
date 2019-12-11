@@ -40,7 +40,7 @@ var baseMaps = {
 var overlayMaps = {
   "South-West Russia 1893": southwestrussia_baseoverlay,
   "Pale of Settlement 1809-1815": geojsonLayer2,
-	"pale_of_settlement_1804": geoJsonLayer1,
+	"pale_of_settlement_1804": geojsonLayer1,
 	"zone_of_jewish_residence_1793": geojsonLayer3,
 	"the_emerging_pale_of_settlement_1800": geojsonLayer4,
 	"pale_of_settlement_1807": geojsonLayer5,
