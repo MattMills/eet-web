@@ -22,6 +22,13 @@ var stamen_toner = L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
 
 southwestrussia_baseoverlay = L.tileLayer('layerdata/southwestrussia/{z}/{x}/{-y}.png', { }).addTo(map);
 
+var geojsonLayer1 = new L.GeoJSON.AJAX("geojson/pale_of_settlement_1804_8wz.geojson");
+var geojsonLayer2 = new L.GeoJSON.AJAX("geojson/pale_of_settlement_1809_1815_bul.geojson");
+var geojsonLayer3 = new L.GeoJSON.AJAX("geojson/zone_of_jewish_residence_1793_k3z.geojson");
+var geojsonLayer4 = new L.GeoJSON.AJAX("geojson/the_emerging_pale_of_settlement_1800_zkl.geojson");
+var geojsonLayer5 = new L.GeoJSON.AJAX("geojson/pale_of_settlement_1807_4ib.geojson");
+var geojsonLayer6 = new L.GeoJSON.AJAX("geojson/zone_of_jewish_residence_1795_6jg");
+
 var baseMaps = {
   "Stamen": stamen_watercolor,
   "Stamen Toner": stamen_toner,
@@ -32,7 +39,12 @@ var baseMaps = {
 
 var overlayMaps = {
   "South-West Russia 1893": southwestrussia_baseoverlay,
-  //"Pale of Settlement 1809-1815": hapmap2
+  "Pale of Settlement 1809-1815": geojsonLayer2,
+	"pale_of_settlement_1804": geoJsonLayer1,
+	"zone_of_jewish_residence_1793": geojsonLayer3,
+	"the_emerging_pale_of_settlement_1800": geojsonLayer4,
+	"pale_of_settlement_1807": geojsonLayer5,
+	"zone_of_jewish_residence_1795": geojsonLayer6,
 }
 
 L.control.layers(baseMaps, overlayMaps,{collapsed:false}).addTo(map);
