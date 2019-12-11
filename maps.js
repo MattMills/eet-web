@@ -1,4 +1,4 @@
-$(document).ready({
+$(document).ready(function(){
 
 // initialize the map on the "map" div with a given center and zoom
 var map = L.map('map', {
