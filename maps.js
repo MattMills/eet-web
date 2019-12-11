@@ -31,7 +31,7 @@ var baseMaps = {
 
 var overlayMaps = {
   "South-West Russia 1893": hapmap,
-  "Pale of Settlement 1809-1815": hapmap2
+  //"Pale of Settlement 1809-1815": hapmap2
 }
 
 L.control.layers(baseMaps, overlayMaps,{collapsed:false}).addTo(map);
