@@ -14,13 +14,13 @@ var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 var stamen_watercolor = L.tileLayer('http://tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
     attribution: ''
-}).addTo(map);
+});
 
 var stamen_toner = L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
     attribution: ''
-}).addTo(map);
+});
 
-var hapmap = L.tileLayer('layerdata/southwestrussia/{z}/{x}/{-y}.png', { }).addTo(map);
+southwestrussia_baseoverlay = L.tileLayer('layerdata/southwestrussia/{z}/{x}/{-y}.png', { }).addTo(map);
 
 var baseMaps = {
   "Stamen": stamen_watercolor,
@@ -31,13 +31,13 @@ var baseMaps = {
 //
 
 var overlayMaps = {
-  "South-West Russia 1893": hapmap,
+  "South-West Russia 1893": southwestrussia_baseoverlay,
   //"Pale of Settlement 1809-1815": hapmap2
 }
 
 L.control.layers(baseMaps, overlayMaps,{collapsed:false}).addTo(map);
 
 //Really hacky opacity slider
-$("span:contains('South-West Russia 1893')").html('South-West Russia 1893<input id="slide" type="range" min="0" max="1" step="0.1" value="1.0" onchange="hapmap.setOpacity(this.value)">');
+$("span:contains('South-West Russia 1893')").html('South-West Russia 1893<input id="slide" type="range" min="0" max="1" step="0.1" value="1.0" onchange="southwestrussia_baseoverlay.setOpacity(this.value)">');
 
 });
