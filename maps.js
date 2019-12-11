@@ -19,7 +19,7 @@ var stamen_toner = L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
     attribution: ''
 }).addTo(map);
 
-var hapmap = L.tileLayer('layerdata/southwestrussia/{z}/{x}/{y}.png', { }).addTo(map);
+var hapmap = L.tileLayer('layerdata/southwestrussia/{z}/{x}/{-y}.png', { }).addTo(map);
 
 var baseMaps = {
   "Stamen": stamen_watercolor,
