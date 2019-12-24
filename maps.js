@@ -7,7 +7,6 @@ $(document).ready(function() {
     zoom: 5
   });
 
-
   var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
   }).addTo(map);
@@ -20,7 +19,9 @@ $(document).ready(function() {
     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>.'
   });
 
-  southwestrussia_baseoverlay = L.tileLayer('layerdata/southwestrussia/{z}/{x}/{-y}.png', { }).addTo(map);
+  southwestrussia_baseoverlay = L.tileLayer('layerdata/southwestrussia/{z}/{x}/{-y}.png', {
+    attribution: 'Historical map tiles by <a href="https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~37973~1210986:South-West-Russia-?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No&qvq=q:south%20west%20russia%20a.k.%20Johnston;sort:Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No;lc:RUMSEY~8~1&mi=3&trs=4">David Rumsey collection</a>.'
+  }).addTo(map);
 
   var style1 = {
     "color": "#F4630E",
@@ -63,9 +64,9 @@ $(document).ready(function() {
   var geojsonLayer14 = new L.GeoJSON.AJAX("geojson/zone_of_jewish_residence_1791_wqx.geojson", { style: style2 });
 
   var baseMaps = {
-    "Stamen": stamen_watercolor,
     "Stamen Toner": stamen_toner,
-    "Openstreetmap": osm,
+    "Stamen Watercolor": stamen_watercolor,
+    "OpenStreetMap": osm,
   };
 
   var overlayMaps = {
