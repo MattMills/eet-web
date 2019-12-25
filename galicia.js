@@ -20,7 +20,7 @@ $(document).ready(function() {
   });
 
   allgemeinechartedeskoenigreiches_baseoverlay = L.tileLayer('layerdata/allgemeinechartedeskoenigreiches/{z}/{x}/{-y}.png', {
-    attribution: 'Historical map tiles by ...'
+    attribution: 'Historical map tiles by <a href="https://polona.pl/search/?query=Allgemeine_Charte_des_Koenigreiches_Galizien&filters=public:1">Polish National Library</a>'
   }).addTo(map);
 
   var style1 = {
@@ -53,7 +53,7 @@ $(document).ready(function() {
   };
 
   var geojsonLayer1 = new L.GeoJSON.AJAX("geojson/austrian_galicia_1772.geojson", { style: style1 }).addTo(map);
-  var geojsonLayer2 = new L.GeoJSON.AJAX("geojson/austrian_galicia_1775.geojson", { style: style2 });
+  var geojsonLayer2 = new L.GeoJSON.AJAX("geojson/austrian_bukovina_1775.geojson", { style: style2 });
   var geojsonLayer3 = new L.GeoJSON.AJAX("geojson/west_galicia_1795_1809.geojson", { style: style3 });
   var geojsonLayer4 = new L.GeoJSON.AJAX("geojson/removal_of_tarnopol_region_1809_1815.geojson", { style: style4 });
   var geojsonLayer5 = new L.GeoJSON.AJAX("geojson/free_state_of_krakow_1815_1846.geojson", { style: style5 });
@@ -67,21 +67,21 @@ $(document).ready(function() {
 
   var overlayMaps = {
     "General": {
-      "Allgemeine Charte des Koenigreiches": allgemeinechartedeskoenigreiches_baseoverlay,
+      "Allgemeine Charte des Koenigreiches Galizien": allgemeinechartedeskoenigreiches_baseoverlay,
     },
     "Views of Galicia": {
       "Austrian Galicia 1772": geojsonLayer1,
       "Austrian Bukovina 1775": geojsonLayer2,
       "West Galicia 1795-1809": geojsonLayer3,
-      "Removal of the Tarnopol Region<br/>1809-1815": geojsonLayer4,
+      "Removal of the Tarnopol Region 1809-1815": geojsonLayer4,
       "Free State of Krakow 1815-1846": geojsonLayer5,
-      "Austrian Galicia 1846-1918": geojsonLayer6,
+      "Austrian Galicia and Bukovina 1846-1918": geojsonLayer6,
     },
   };
 
   L.control.groupedLayers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
 
   // Really hacky opacity slider.
-  $("span:contains('Allgemeine Charte des Koenigreiches')").html(' Allgemeine Charte des Koenigreiches<br/><input id="slide" type="range" min="0" max="1" step="0.1" value="1.0" oninput="allgemeinechartedeskoenigreiches_baseoverlay.setOpacity(this.value)">');
+  $("span:contains('Allgemeine Charte des Koenigreiches')").html(' Allgemeine Charte des Koenigreiches Galizien<br/><input id="slide" type="range" min="0" max="1" step="0.1" value="1.0" oninput="allgemeinechartedeskoenigreiches_baseoverlay.setOpacity(this.value)">');
 
 });
