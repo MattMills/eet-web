@@ -39,9 +39,19 @@
     .leaflet-control-layers-group label {
       padding-left: .5em;
     }
+
+    #btn{
+      position:absolute;
+      top:10px;
+      right:10px;
+      z-index:1000;
+      background:white;
+    }
   </style>
 </head>
 <body>
-  <div id="map"></div>
+  <div id="map">
+    <button id="btn">Toggle layers</button>
+  </div>
 </body>
 </html>
