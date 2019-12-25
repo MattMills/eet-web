@@ -1,10 +1,10 @@
-var southwestrussia_baseoverlay = null;
+var allgemeinechartedeskoenigreiches_baseoverlay = null;
 
 $(document).ready(function() {
   // Initialize the map on the "map" div with a given center and zoom.
   var map = L.map('map', {
-    center: [50.0642, 37.2656],
-    zoom: 5
+    center: [50.0642, 27.2900],
+    zoom: 6
   });
 
   var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -19,8 +19,8 @@ $(document).ready(function() {
     attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>'
   });
 
-  southwestrussia_baseoverlay = L.tileLayer('layerdata/southwestrussia/{z}/{x}/{-y}.png', {
-    attribution: 'Historical map tiles by <a href="https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~37973~1210986:South-West-Russia-?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No&qvq=q:south%20west%20russia%20a.k.%20Johnston;sort:Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No;lc:RUMSEY~8~1&mi=3&trs=4">David Rumsey collection</a>'
+  allgemeinechartedeskoenigreiches_baseoverlay = L.tileLayer('layerdata/allgemeinechartedeskoenigreiches/{z}/{x}/{-y}.png', {
+    attribution: 'Historical map tiles by ...'
   }).addTo(map);
 
   var style1 = {
@@ -76,7 +76,7 @@ $(document).ready(function() {
 
   var overlayMaps = {
     "General": {
-      "South-West Russia 1893": southwestrussia_baseoverlay,
+      "Allgemeine Charte des Koenigreiches": allgemeinechartedeskoenigreiches_baseoverlay,
     },
     "Polish-Lithuanian Commonwealth": {
       "Polish-Lithuanian Commonwealth<br/>1667-1772": geojsonLayer15,
@@ -106,6 +106,6 @@ $(document).ready(function() {
   L.control.groupedLayers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
 
   // Really hacky opacity slider.
-  $("span:contains('South-West Russia 1893')").html(' South-West Russia 1893<br/><input id="slide" type="range" min="0" max="1" step="0.1" value="1.0" oninput="southwestrussia_baseoverlay.setOpacity(this.value)">');
+  $("span:contains('Allgemeine Charte des Koenigreiches')").html(' Allgemeine Charte des Koenigreiches<br/><input id="slide" type="range" min="0" max="1" step="0.1" value="1.0" oninput="allgemeinechartedeskoenigreiches_baseoverlay.setOpacity(this.value)">');
 
 });
