@@ -8,19 +8,19 @@ $(document).ready(function() {
   });
 
   var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
+    attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
   }).addTo(map);
 
   var stamen_watercolor = L.tileLayer('http://tile.stamen.com/watercolor/{z}/{x}/{y}.png', {
-    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>.'
+    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>'
   });
 
   var stamen_toner = L.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
-    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>.'
+    attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://www.openstreetmap.org/copyright">ODbL</a>'
   });
 
   southwestrussia_baseoverlay = L.tileLayer('layerdata/southwestrussia/{z}/{x}/{-y}.png', {
-    attribution: 'Historical map tiles by <a href="https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~37973~1210986:South-West-Russia-?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No&qvq=q:south%20west%20russia%20a.k.%20Johnston;sort:Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No;lc:RUMSEY~8~1&mi=3&trs=4">David Rumsey collection</a>.'
+    attribution: 'Historical map tiles by <a href="https://www.davidrumsey.com/luna/servlet/detail/RUMSEY~8~1~37973~1210986:South-West-Russia-?sort=Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No&qvq=q:south%20west%20russia%20a.k.%20Johnston;sort:Pub_List_No_InitialSort%2CPub_Date%2CPub_List_No%2CSeries_No;lc:RUMSEY~8~1&mi=3&trs=4">David Rumsey collection</a>'
   }).addTo(map);
 
   var style1 = {
@@ -98,6 +98,6 @@ $(document).ready(function() {
   L.control.groupedLayers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
 
   // Really hacky opacity slider.
-  $("span:contains('South-West Russia 1893')").html(' South-West Russia 1893<input id="slide" type="range" min="0" max="1" step="0.1" value="1.0" oninput="southwestrussia_baseoverlay.setOpacity(this.value)">');
+  $("span:contains('South-West Russia 1893')").html(' South-West Russia 1893<br/><input id="slide" type="range" min="0" max="1" step="0.1" value="1.0" oninput="southwestrussia_baseoverlay.setOpacity(this.value)">');
 
 });
