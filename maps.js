@@ -53,7 +53,7 @@ $(document).ready(function() {
   };
 
   var geojsonLayer1 = new L.GeoJSON.AJAX("geojson/pale_of_settlement_1804_8wz.geojson", { style: style1 });
-  var geojsonLayer2 = new L.GeoJSON.AJAX("geojson/pale_of_settlement_1809_1815_bul.geojson", { style: style1 }).addTo(map);
+  var geojsonLayer2 = new L.GeoJSON.AJAX("geojson/pale_of_settlement_1809_1815_bul.geojson", { style: style1 });
   var geojsonLayer3 = new L.GeoJSON.AJAX("geojson/zone_of_jewish_residence_1793_k3z.geojson", { style: style3 });
   var geojsonLayer4 = new L.GeoJSON.AJAX("geojson/the_emerging_pale_of_settlement_1800_zkl.geojson", { style: style1 });
   var geojsonLayer5 = new L.GeoJSON.AJAX("geojson/pale_of_settlement_1807_4ib.geojson", { style: style1 });
@@ -66,7 +66,7 @@ $(document).ready(function() {
   var geojsonLayer12 = new L.GeoJSON.AJAX("geojson/bessarabia_k12.geojson", { style: style5 });
   var geojsonLayer13 = new L.GeoJSON.AJAX("geojson/tarnopol_addition_1809_1815_23v.geojson", { style: style5 });
   var geojsonLayer14 = new L.GeoJSON.AJAX("geojson/zone_of_jewish_residence_1791_wqx.geojson", { style: style2 });
-  var geojsonLayer15 = new L.GeoJSON.AJAX("geojson/polish_lithuanian_commonwealth_1667_1772.geojson", { style: style7 });
+  var geojsonLayer15 = new L.GeoJSON.AJAX("geojson/polish_lithuanian_commonwealth_1667_1772.geojson", { style: style7 }).addTo(map);
 
   var baseMaps = {
     "Stamen Toner": stamen_toner,
