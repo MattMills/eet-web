@@ -24,15 +24,15 @@ $(document).ready(function() {
   }).addTo(map);
 
   var style1 = {
-    "color": "#F4630E",
+    "color": "#F81F05",
     "weight": 3,
   };
   var style2 = {
-    "color": "#0F0FDA",
+    "color": "#054BF8",
     "weight": 3,
   };
   var style3 = {
-    "color": "#F10683",
+    "color": "#F37D4D",
     "weight": 3,
   };
   var style4 = {
@@ -40,33 +40,41 @@ $(document).ready(function() {
     "weight": 3,
   };
   var style5 = {
-    "color": "#F56905",
+    "color": "#F88605",
     "weight": 3,
   };
   var style6 = {
-    "color": "#3410E9",
+    "color": "#F85A05",
     "weight": 3,
   };
   var style7 = {
     "color": "#8A2BE2",
     "weight": 3,
   };
+  var style8 = {
+    "color": "#215CED",
+    "weight": 3,
+  };
 
   var geojsonLayer1 = new L.GeoJSON.AJAX("geojson/pale_of_settlement_1804_8wz.geojson", { style: style1 });
   var geojsonLayer2 = new L.GeoJSON.AJAX("geojson/pale_of_settlement_1809_1815_bul.geojson", { style: style1 });
-  var geojsonLayer3 = new L.GeoJSON.AJAX("geojson/zone_of_jewish_residence_1793_k3z.geojson", { style: style3 });
-  var geojsonLayer4 = new L.GeoJSON.AJAX("geojson/the_emerging_pale_of_settlement_1800_zkl.geojson", { style: style1 });
+  var geojsonLayer3 = new L.GeoJSON.AJAX("geojson/zone_of_jewish_residence_1793_k3z.geojson", { style: style6 });
+  var geojsonLayer4 = new L.GeoJSON.AJAX("geojson/the_emerging_pale_of_settlement_1800_zkl.geojson", { style: style6 });
   var geojsonLayer5 = new L.GeoJSON.AJAX("geojson/pale_of_settlement_1807_4ib.geojson", { style: style1 });
-  var geojsonLayer6 = new L.GeoJSON.AJAX("geojson/zone_of_jewish_residence_1795_6jg.geojson", { style: style4 });
-  var geojsonLayer7 = new L.GeoJSON.AJAX("geojson/first_russian_partition_1772_3fj.geojson", { style: style6 });
-  var geojsonLayer8 = new L.GeoJSON.AJAX("geojson/second_russian_partition_1793_g5j.geojson", { style: style6 });
-  var geojsonLayer9 = new L.GeoJSON.AJAX("geojson/third_russian_partition_1795_ouu.geojson", { style: style6 });
+  var geojsonLayer6 = new L.GeoJSON.AJAX("geojson/zone_of_jewish_residence_1795_6jg.geojson", { style: style6 });
+  var geojsonLayer7 = new L.GeoJSON.AJAX("geojson/first_russian_partition_1772_3fj.geojson", { style: style2 });
+  var geojsonLayer8 = new L.GeoJSON.AJAX("geojson/second_russian_partition_1793_g5j.geojson", { style: style2 });
+  var geojsonLayer9 = new L.GeoJSON.AJAX("geojson/third_russian_partition_1795_ouu.geojson", { style: style2 });
   var geojsonLayer10 = new L.GeoJSON.AJAX("geojson/novorossiya_1792_jxw.geojson", { style: style5 });
   var geojsonLayer11 = new L.GeoJSON.AJAX("geojson/bialystock_oblast_1807_1842_2db.geojson", { style: style5 });
   var geojsonLayer12 = new L.GeoJSON.AJAX("geojson/bessarabia_k12.geojson", { style: style5 });
   var geojsonLayer13 = new L.GeoJSON.AJAX("geojson/tarnopol_addition_1809_1815_23v.geojson", { style: style5 });
-  var geojsonLayer14 = new L.GeoJSON.AJAX("geojson/zone_of_jewish_residence_1791_wqx.geojson", { style: style2 });
-  var geojsonLayer15 = new L.GeoJSON.AJAX("geojson/polish_lithuanian_commonwealth_1667_1772.geojson", { style: style7 }).addTo(map);
+  var geojsonLayer14 = new L.GeoJSON.AJAX("geojson/zone_of_jewish_residence_1791_wqx.geojson", { style: style6 });
+  var geojsonLayer15 = new L.GeoJSON.AJAX("geojson/polish_lithuanian_commonwealth_1667_1772.geojson", { style: style7 });
+  var geojsonLayer16 = new L.GeoJSON.AJAX("geojson/county_administrative_centers_i0n.json", { style: style8 });
+  var geojsonLayer17 = new L.GeoJSON.AJAX("geojson/pale_of_settlement_1815_1818_fu4.json", { style: style1 });
+  var geojsonLayer18 = new L.GeoJSON.AJAX("geojson/pale_of_settlement_1818_myx.json", { style: style1 }).addTo(map);
+  var geojsonLayer19 = new L.GeoJSON.AJAX("geojson/congress_poland_1815_0pc.json", { style: style3 }).addTo(map);
 
   var baseMaps = {
     "Stamen Toner": stamen_toner,
@@ -86,11 +94,12 @@ $(document).ready(function() {
       "Second Russian partition 1793": geojsonLayer8,
       "Third Russian partition 1795": geojsonLayer9,
     },
-    "Pre and Post Partition Acquisitioins": {
+    "Pre and Post Partition Acquisitions": {
       "Novorossiya 1792": geojsonLayer10,
       "Bialystock oblast 1807-1842": geojsonLayer11,
       "Bessarabia oblast 1812": geojsonLayer12,
       "Tarnopol Addition 1809-1815": geojsonLayer13,
+      "Congress Poland 1815": geojsonLayer19,
     },
     "The Emerging Pale of Settlement": {
       "Zone of Jewish residence 1791": geojsonLayer14,
@@ -100,6 +109,11 @@ $(document).ready(function() {
       "Pale of Settlement 1804": geojsonLayer1,
       "Pale of Settlement 1807": geojsonLayer5,
       "Pale of Settlement 1809-1815": geojsonLayer2,
+      "Pale of Settlement 1815-1818": geojsonLayer17,
+      "Pale of Settlement 1818": geojsonLayer18,
+    },
+    "Towns of the Pale of Settlement": {
+      "County Administrative Centers": geojsonLayer16,	
     },
   };
 
