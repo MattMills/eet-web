@@ -58,7 +58,7 @@ $(document).ready(function() {
     "weight": 3,
   };
 
-  var geojsonLayer1 = new L.GeoJSON.AJAX("geojson/austrian_galicia_1772.geojson", { style: style1 }).addTo(map);
+  var geojsonLayer1 = new L.GeoJSON.AJAX("geojson/austrian_galicia_1772.geojson", { style: style1 });
   var geojsonLayer2 = new L.GeoJSON.AJAX("geojson/austrian_bukovina_1775.geojson", { style: style2 });
   var geojsonLayer3 = new L.GeoJSON.AJAX("geojson/west_galicia_1795_1809.geojson", { style: style3 });
   var geojsonLayer4 = new L.GeoJSON.AJAX("geojson/removal_of_tarnopol_region_1809_1815.geojson", { style: style4 });
