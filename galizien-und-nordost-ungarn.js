@@ -1,17 +1,13 @@
 var allgemeinechartedeskoenigreiches_baseoverlay = null;
 
 $(document).ready(function() {
-  // Get url parameters
-  var params = {};
-  window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m, key, value) {
-    params[key] = value;
-  });
-
   // Initialize the map on the "map" div with a given center and zoom.
   var map = L.map('map', {
-    center: [params.lat || 49.3642, params.lng || 24.5900],
-    zoom: params.zoom || 7
+    center: [49.3642, 24.5900],
+    zoom: 7
   });
+
+  var hash = new L.Hash(map);
 
   var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
@@ -58,12 +54,7 @@ $(document).ready(function() {
     "weight": 3,
   };
 
-  var geojsonLayer1 = new L.GeoJSON.AJAX("geojson/austrian_galicia_1772.geojson", { style: style1 });
-  var geojsonLayer2 = new L.GeoJSON.AJAX("geojson/austrian_bukovina_1775.geojson", { style: style2 });
-  var geojsonLayer3 = new L.GeoJSON.AJAX("geojson/west_galicia_1795_1809.geojson", { style: style3 });
-  var geojsonLayer4 = new L.GeoJSON.AJAX("geojson/removal_of_tarnopol_region_1809_1815.geojson", { style: style4 });
-  var geojsonLayer5 = new L.GeoJSON.AJAX("geojson/free_state_of_krakow_1815_1846.geojson", { style: style5 });
-  var geojsonLayer6 = new L.GeoJSON.AJAX("geojson/austrian_galicia_1846_1918.geojson", { style: style6 });
+  var geojsonLayer1 = new L.GeoJSON.AJAX("geojson/jewish_communities_of_galicia_1916_xxo_2.json", { style: style2 });
 
   var baseMaps = {
     "Stamen Toner": stamen_toner,
@@ -74,6 +65,9 @@ $(document).ready(function() {
   var overlayMaps = {
     "General": {
       "Galizien und Nordost-Ungarn, Carl Flemming ~ 1916": galizienundnordostungarn_baseoverlay,
+    },
+    "Jews Residing in Austrian Galicia": {
+      "Jewish Communities of Record in the JewishGen Gazetteer ca.1900": geojsonLayer1,
     },
   };
 
