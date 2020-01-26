@@ -54,7 +54,7 @@ $(document).ready(function() {
     "weight": 3,
   };
 
-  var geojsonLayer1 = new L.GeoJSON.AJAX("geojson/jewish_communities_of_galicia_wy4.json", { style: style2 });
+  var geojsonLayer1 = new L.GeoJSON.AJAX("geojson/jewish_communities_of_galicia_1916.geojson", {}).addTo(map);
 
   var baseMaps = {
     "Stamen Toner": stamen_toner,
