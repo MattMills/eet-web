@@ -53,9 +53,21 @@ $(document).ready(function() {
     "color": "#8A2BE2",
     "weight": 3,
   };
+  var yellowIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
 
   var geojsonLayer1 = new L.GeoJSON.AJAX("geojson/jewish_communities_of_galicia_1916.geojson", {}).addTo(map);
-  var geojsonLayer2 = new L.GeoJSON.AJAX("geojson/jewish_communities_of_nothern_hungary.geojson", {});
+  var geojsonLayer2 = new L.GeoJSON.AJAX("geojson/jewish_communities_of_nothern_hungary.geojson", {
+    pointToLayer: function(geoJsonPoint, latlng) {
+      return L.marker(latlng, { icon: yellowIcon });
+    },
+  });
 
   var baseMaps = {
     "Stamen Toner": stamen_toner,
