@@ -55,6 +55,7 @@ $(document).ready(function() {
   };
 
   var geojsonLayer1 = new L.GeoJSON.AJAX("geojson/jewish_communities_of_galicia_1916.geojson", {}).addTo(map);
+  var geojsonLayer2 = new L.GeoJSON.AJAX("geojson/jewish_communities_of_nothern_hungary.geojson", {});
 
   var baseMaps = {
     "Stamen Toner": stamen_toner,
@@ -66,8 +67,9 @@ $(document).ready(function() {
     "General": {
       "Galizien und Nordost-Ungarn, Carl Flemming ~ 1916": galizienundnordostungarn_baseoverlay,
     },
-    "Jews Residing in Austrian Galicia": {
-      "Jewish Communities of Record in the JewishGen Gazetteer ca.1900": geojsonLayer1,
+    "Jewish Communities of Record in the JewishGen Gazetteer ca. 1900": {
+      "Jews Residing in the province of Galicia": geojsonLayer1,
+      "Jews Residing in northern Hungary": geojsonLayer2,
     },
   };
 
