@@ -3,7 +3,7 @@ var allgemeinechartedeskoenigreiches_baseoverlay = null;
 $(document).ready(function() {
   // Initialize the map on the "map" div with a given center and zoom.
   var map = L.map('map', {
-    center: [49.3642, 24.5900],
+    center: [49.934, 14.991],
     zoom: 7
   });
 
