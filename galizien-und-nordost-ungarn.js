@@ -1,4 +1,4 @@
-var allgemeinechartedeskoenigreiches_baseoverlay = null;
+var galizienundnordostungarn_baseoverlay = null;
 
 $(document).ready(function() {
   // Initialize the map on the "map" div with a given center and zoom.

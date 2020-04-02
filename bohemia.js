@@ -1,9 +1,9 @@
-var allgemeinechartedeskoenigreiches_baseoverlay = null;
+var bohemia_baseoverlay = null;
 
 $(document).ready(function() {
   // Initialize the map on the "map" div with a given center and zoom.
   var map = L.map('map', {
-    center: [49.934, 14.991],
+    center: [49.792, 16.210],
     zoom: 7
   });
 
@@ -22,7 +22,7 @@ $(document).ready(function() {
   });
 
   bohemia_baseoverlay = L.tileLayer('layerdata/bohemia/{z}/{x}/{-y}.png', {
-    attribution: 'Historical map tiles by <a href="https://polona.pl/item/galizien-und-nordost-ungarn,MTEwNTk3NTE1/4/#info:metadata">Polish National Library</a>'
+    attribution: 'Historical map tiles by <a href="https://rcin.org.pl/dlibra/publication/edition/57001?id=57001">https://rcin.org.pl/dlibra/publication/edition/57001?id=57001</a>'
   }).addTo(map);
 
   var style1 = {
@@ -77,7 +77,7 @@ $(document).ready(function() {
 
   var overlayMaps = {
     "General": {
-      "Bohemia 1899": bohemia_baseoverlay,
+      "General-Post & Strassen-Karte des Konigreichs Boehmen 1889": bohemia_baseoverlay,
     },/*
     "Jewish Communities of Record in the JewishGen Gazetteer ca. 1900": {
       "Jews Residing in the province of Galicia": geojsonLayer1,
@@ -88,6 +88,6 @@ $(document).ready(function() {
   L.control.groupedLayers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
 
   // Really hacky opacity slider.
-  $("span:contains('Bohemia 1899')").html(' Bohemia 1899<br/><input id="slide" type="range" min="0" max="1" step="0.1" value="1.0" oninput="bohemia_baseoverlay.setOpacity(this.value)">');
+  $("span:contains('General-Post & Strassen-Karte des Konigreichs Boehmen 1889')").html(' General-Post & Strassen-Karte des Konigreichs Boehmen 1889<br/><input id="slide" type="range" min="0" max="1" step="0.1" value="1.0" oninput="bohemia_baseoverlay.setOpacity(this.value)">');
 
 });
