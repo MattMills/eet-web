@@ -80,7 +80,7 @@ $(document).ready(function() {
       "General-Post & Strassen-Karte des Konigreichs Boehmen 1889": bohemia_baseoverlay,
     },
     "Section name": {
-      "Layer name": geojsonLayer1,
+      "Jewish communities of Bohemia 1900": geojsonLayer1,
       /*"Jews Residing in northern Hungary": geojsonLayer2,*/
     },
   };
