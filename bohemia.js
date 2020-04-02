@@ -62,7 +62,7 @@ $(document).ready(function() {
     shadowSize: [41, 41]
   });
 
-  //var geojsonLayer1 = new L.GeoJSON.AJAX("geojson/jewish_communities_of_galicia_1916.geojson", {}).addTo(map);
+  var geojsonLayer1 = new L.GeoJSON.AJAX("geojson/jewish_communities_of_bohemia_1900.geojson", {}).addTo(map);
   /*var geojsonLayer2 = new L.GeoJSON.AJAX("geojson/jewish_communities_of_nothern_hungary.geojson", {
     pointToLayer: function(geoJsonPoint, latlng) {
       return L.marker(latlng, { icon: yellowIcon });
@@ -78,11 +78,11 @@ $(document).ready(function() {
   var overlayMaps = {
     "General": {
       "General-Post & Strassen-Karte des Konigreichs Boehmen 1889": bohemia_baseoverlay,
-    },/*
-    "Jewish Communities of Record in the JewishGen Gazetteer ca. 1900": {
-      "Jews Residing in the province of Galicia": geojsonLayer1,
-      "Jews Residing in northern Hungary": geojsonLayer2,
-    },*/
+    },
+    "Section name": {
+      "Layer name": geojsonLayer1,
+      /*"Jews Residing in northern Hungary": geojsonLayer2,*/
+    },
   };
 
   L.control.groupedLayers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
